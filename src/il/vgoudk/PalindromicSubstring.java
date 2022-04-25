@@ -24,7 +24,7 @@ public class PalindromicSubstring {
         }
         final String s1;
         if (maxPalindrom.length == 0) {
-            return s.substring(0,1);
+            return s.substring(0, 1);
         } else {
             return String.valueOf(maxPalindrom);
         }
@@ -37,8 +37,9 @@ public class PalindromicSubstring {
         int r = centerIndex;
 
         int similarCount = 0;
-        while (centerIndex + 1 + similarCount < data.length && data[centerIndex] == data[centerIndex + 1 + similarCount])
+        while (centerIndex + 1 + similarCount < data.length && data[centerIndex] == data[centerIndex + 1 + similarCount]) {
             similarCount++;
+        }
 
         while (true) {
             final int lCandidate = centerIndex - delta;
