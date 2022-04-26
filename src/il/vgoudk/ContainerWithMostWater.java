@@ -2,15 +2,14 @@ package il.vgoudk;
 
 public class ContainerWithMostWater {
     public int maxArea(int[] height) {
-        int maxArea = 0;
-        for (int leftIndex = 0; leftIndex < height.length - 1; leftIndex++) {
-            for (int rightIndex = leftIndex + 1; rightIndex < height.length; rightIndex++) {
-                final int curWidth = rightIndex - leftIndex;
-                final int curHeight = Math.min(height[leftIndex], height[rightIndex]);
-                final int area = curWidth * curHeight;
-                if (area > maxArea) maxArea = area;
-            }
+        int maxarea = 0, l = 0, r = height.length - 1;
+        while (l < r) {
+            maxarea = Math.max(maxarea, Math.min(height[l], height[r]) * (r - l));
+            if (height[l] < height[r])
+                l++;
+            else
+                r--;
         }
-        return maxArea;
+        return maxarea;
     }
 }

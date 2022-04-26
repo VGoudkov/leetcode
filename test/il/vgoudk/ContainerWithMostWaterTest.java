@@ -12,7 +12,8 @@ class ContainerWithMostWaterTest {
     static Stream<Arguments> mostWaterContainerDataSource() {
         return Stream.of(
                 Arguments.of(new int[]{1,8,6,2,5,4,8,3,7}, 49),
-                Arguments.of(new int[]{1,1}, 1)
+                Arguments.of(new int[]{1,1}, 1),
+                Arguments.of(new int[]{2,3,4,5,18,17,6}, 17)
         );
     }
 
